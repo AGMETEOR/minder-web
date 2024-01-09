@@ -8,3 +8,5 @@ npm run dev
 ```
 
 By default it points to your local minder server
+
+NOTE: This project is very much a WIP. Contributions at this point that help improve upon it are very welcome.
