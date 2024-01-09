@@ -6,8 +6,10 @@ import { useState } from 'react';
 import yaml from 'js-yaml';
 import Table from '@/components/table';
 import { useStore } from '@/store';
+import { useTranslations } from 'next-intl';
 
 export default function Rules(){
+	const t = useTranslations("Rules");
 	const rules = useStore((state) => state.projectRules);
 	const addRuleToControlPlane = useStore((state) => state.addRuleToControlPlane);
 	
@@ -27,7 +29,7 @@ export default function Rules(){
 				provider: rulesItem.context.provider,
 				actions: [
 					{
-						action: 'View',
+						action: t('view'),
 						icon: <FontAwesomeIcon icon={faEdit}/>,
 						actionFunc: () => {
 							const orderedRuleDef = {
@@ -53,7 +55,7 @@ export default function Rules(){
 		})
 
 		const tableData = {
-			titles: ['Name', 'Provider'],
+			titles: [t('name'), t('provider')],
 			body,
 		}; 
 
@@ -61,10 +63,10 @@ export default function Rules(){
 	}
 
 	return (
-		<div className="">
+		<div>
 			<Table
-				tableTitle="Your rules types"
-				searchPlaceholder="Search rules"
+				tableTitle={t('title')}
+				searchPlaceholder={t('search')}
 				createFunc={() => {
 					setEditorMode(Mode.C);
 					setDefaultVal('---');

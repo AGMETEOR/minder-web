@@ -1,5 +1,6 @@
 import { faDeleteLeft, faEllipsisH, faPen, faPlus, faTrash } from '@fortawesome/free-solid-svg-icons';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { useTranslations } from 'next-intl';
 import React, { useState } from 'react';
 
 type TableProps = {
@@ -44,6 +45,7 @@ export const Options = (props: Opts) => {
 }
 
 const Table = (props: TableProps) => {
+    const t = useTranslations("Table");
     return (
         <div className="flex flex-col">
         <div className="-my-2 sm:-mx-6 lg:-mx-8">
@@ -55,12 +57,12 @@ const Table = (props: TableProps) => {
                       {
                         props.createFunc && (
                             <button onClick={() => props.createFunc()} className="bg-pink-500 text-white active:bg-pink-600 font-bold text-xs px-4 py-2 rounded shadow hover:shadow-md outline-none focus:outline-none mr-1 mb-1 ease-linear transition-all duration-150" type="button">
-                            Create <FontAwesomeIcon icon={faPlus} />
+                            {t('create')} <FontAwesomeIcon icon={faPlus} />
                             </button>
                         )
                       }
                     </div>
-                    {/* <form className="basis-1/4">
+                    <form className="basis-1/4">
                     <label htmlFor="default-search" className="mb-2 text-sm font-medium text-gray-900 sr-only dark:text-white">Search</label>
     <div className="relative">
         <div className="absolute inset-y-0 start-0 flex items-center ps-3 pointer-events-none">
@@ -70,7 +72,7 @@ const Table = (props: TableProps) => {
         </div>
         <input type="search" id="default-search" className="block w-full p-4 ps-10 text-sm text-gray-900 border border-gray-300 rounded-lg bg-gray-50 focus:ring-blue-500 focus:border-blue-500" placeholder={props.searchPlaceholder} required/>
     </div>
-</form> */}
+</form>
                 </div>
               <table className="min-w-full divide-y divide-gray-200">
                 <thead className="bg-gray-50">

@@ -6,8 +6,10 @@ import yaml from 'js-yaml';
 import Table from '@/components/table';
 import { faEdit } from '@fortawesome/free-solid-svg-icons/faEdit';
 import { useStore } from '@/store';
+import { useTranslations } from 'next-intl';
 
 export default function Profiles(){
+	const t = useTranslations("Profiles");
 	const profiles = useStore((state) => state.projectProfiles);
 	const addProfileToControlPlane = useStore((state) => state.addProfileToControlPlane);
 
@@ -29,7 +31,7 @@ export default function Profiles(){
 				remediate: profile.remediate,
 				actions: [
 					{
-						action: 'View',
+						action: t('view'),
 						icon: <FontAwesomeIcon icon={faEdit}/>,
 						actionFunc: () => {
 							const orderedRuleDef = {
@@ -53,7 +55,7 @@ export default function Profiles(){
 		})
 
 		const tableData = {
-			titles: ['Name', 'Provider', 'Alert', 'Remediate'],
+			titles: [t('name'), t('provider'), t('alert'), t('remediate')],
 			body,
 		}; 
 
@@ -63,8 +65,8 @@ export default function Profiles(){
 	return (
 		<div>
 			<Table
-				tableTitle="Your profiles"
-				searchPlaceholder="Search profiles"
+				tableTitle={t('title')}
+				searchPlaceholder={t('search')}
 				createFunc={() => {
 					setEditorMode(Mode.C);
 					setDefaultVal('---');

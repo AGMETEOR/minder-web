@@ -4,5 +4,73 @@
       "proposition": "Secure and govern software projects",
       "description": "Minder by Stacklok is an open source platform that helps development teams and open source communities build more secure software, and prove to others that what they’ve built is secure.",
       "signin": "Sign in with Github"
+    },
+    "LangSwitcher": {
+      "btn": "Select language",
+      "english": "English",
+      "french": "French",
+      "finnish": "Finnish"
+    },
+    "Projects": {
+      "title": "Your minder projects",
+      "create": "Create project",
+      "goToDashboard": "Go to project dashboard"
+    },
+    "Sidebar": {
+      "providers": "Providers",
+      "repos": "Repos",
+      "rules": "Rules",
+      "profiles": "Profiles"
+    },
+    "Header": {
+      "signout": "Sign out"
+    },
+    "Providers": {
+      "title": "Allow Minder to manage your GitHub repositories",
+      "enroll": "Enroll",
+      "enrolled": "Enrolled"
+    },
+    "Repos": {
+      "remoteRepos": "Your remote provider repositories",
+      "localRepos": "Your minder repositories",
+      "name": "Name",
+      "owner": "Owner",
+      "provider": "Provider",
+      "addMinder": "Add to minder",
+      "removeMinder": "Remove from minder",
+      "searchRemote": "Search remote repos",
+      "search": "Search repos"
+    },
+    "Rules": {
+      "title": "Your rules types",
+      "name": "Name",
+      "provider": "Provider",
+      "view": "View",
+      "search": "Search rules"
+    },
+    "Profiles": {
+      "title": "Your profiles",
+      "name": "Name",
+      "provider": "Provider",
+      "view": "View",
+      "search": "Search profiles",
+      "alert": "Alert",
+      "remediate": "Remediate"
+    },
+    "Table": {
+      "create": "Create"
+    },
+    "Editor": {
+      "close": "Close",
+      "save": "Save",
+      "saveclose": "Save & Close",
+      "addRule": "Add rule",
+      "viewRules": "View rules"
+    },
+    "Footer": {
+      "rights": "All Rights Reserved.",
+      "status": "Status page",
+      "terms": "Terms of service",
+      "docs": "Docs"
     }
 }

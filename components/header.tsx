@@ -4,8 +4,10 @@ import Image from 'next/image';
 import { signOut } from 'next-auth/react';
 import { getInitials } from '@/utils/general';
 import { useStore } from '@/store';
+import { useTranslations } from 'next-intl';
 
 const Header = () => {
+	const t = useTranslations("Header");
 	const user = useStore((state) => state.currentUser);
 
 	const userName = user.name;
@@ -89,7 +91,7 @@ const Header = () => {
 						<svg width="16" height="16" viewBox="0 0 16 16" className="me-3" fill="none" xmlns="http://www.w3.org/2000/svg">
 							<path d="M9.66667 10.3333L13 7M13 7L9.66667 3.66667M13 7H5M5 1H4.2C3.0799 1 2.51984 1 2.09202 1.21799C1.7157 1.40973 1.40973 1.71569 1.21799 2.09202C1 2.51984 1 3.07989 1 4.2V9.8C1 10.9201 1 11.4802 1.21799 11.908C1.40973 12.2843 1.71569 12.5903 2.09202 12.782C2.51984 13 3.0799 13 4.2 13H5" stroke="#667085" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" className="stroke-cyan-950"></path>
 						</svg>
-						<span>Sign Out</span>
+						<span>{t('signout')}</span>
 					</div>
 				</div>
 					</div>

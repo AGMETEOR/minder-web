@@ -3,8 +3,10 @@ import Table from '@/components/table';
 import { useStore } from '@/store';
 import { faEdit } from '@fortawesome/free-solid-svg-icons/faEdit';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { useTranslations } from 'next-intl';
 
 export default function Repos(){
+	const t = useTranslations('Repos')
 	const localRepos = useStore((state) => state.localRepos);
 	const remoteRepos = useStore((state) => state.remoteRepos);
 	const addToLocalRepos = useStore((state) => state.addToLocalRepos);
@@ -21,7 +23,7 @@ export default function Repos(){
 				owner: data.owner,
 				actions: [
 					{
-						action: 'Add to minder',
+						action: t('addMinder'),
 						icon: <FontAwesomeIcon icon={faEdit}/>,
 						actionFunc: () => {
 							addRepoToControlPlane(data.owner, data.repoId, data.name)
@@ -32,7 +34,7 @@ export default function Repos(){
 		})
 
 		const tableData = {
-			titles: ['Name', 'Owner'],
+			titles: [t('name'), t('owner')],
 			body,
 		}; 
 
@@ -48,7 +50,7 @@ export default function Repos(){
 				provider: data.context.provider,
 				actions: [
 					{
-						action: 'Remove from minder',
+						action: t('removeMinder'),
 						icon: <FontAwesomeIcon icon={faEdit}/>,
 						actionFunc: () => {
 							addRepoToControlPlane(data.owner, data.repoId, data.name)
@@ -59,7 +61,7 @@ export default function Repos(){
 		})
 
 		const tableData = {
-			titles: ['Name', 'Owner', 'Provider'],
+			titles: [t('name'), t('owner'), t('provider')],
 			body,
 		}; 
 
@@ -69,12 +71,12 @@ export default function Repos(){
 	return (
 		<div>
 		<Table
-				tableTitle="Your remote provider repositories"
-				searchPlaceholder="Search remote repos"
+				tableTitle={t('remoteRepos')}
+				searchPlaceholder={t('searchRemote')}
 				data={convertRemoteReposToTableData(remoteRepos.slice(0, 8))}/>
 		<Table
-				tableTitle="Your minder repositories"
-				searchPlaceholder="Search repos"
+				tableTitle={t('localRepos')}
+				searchPlaceholder={t('search')}
 				data={convertLocalReposToTableData(localRepos)}/>
 		</div>
 	)

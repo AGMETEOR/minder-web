@@ -6,9 +6,11 @@ import { useSession } from 'next-auth/react';
 import { Session } from 'next-auth';
 import { Info } from '@/types';
 import { redirect } from 'next/navigation';
+import { useTranslations } from 'next-intl';
 
 
 const GitHubStacklokProvider = () => {
+	const t = useTranslations('Providers')
 	const [verificationComplete, setVerificationComplete] = useState(false);
 	const [verified, setVerified] = useState(false);
 
@@ -89,16 +91,16 @@ const GitHubStacklokProvider = () => {
 				<FontAwesomeIcon icon={faCodeCompare}/>
 			</div>
 			<div className="py-3.5 px-6">
-				<div className="mb-3 text-gray-900 font-normal">Allow Minder to manage your GitHub repositories</div>
+				<div className="mb-3 text-gray-900 font-normal">{t('title')}</div>
 				<button onClick={() => enrollFunc()} className="h-[44px] flex items-center text-sm font-medium text-gray-900 leading-5 rounded-lg border transition-all ease-in-out duration-300 px-2.5 py-1 bg-gray-50 border-gray-200 hover:bg-gray-200 link">
-					{verified && verificationComplete ? 'Enrolled' : 'Enroll'}
+					{verified && verificationComplete ? t('enrolled') : t('enroll')}
 					</button>
 			</div>
 		</div>)
 }
 export default function Providers({ params }: { params: { slug: string } }){
 	console.log('THE SLUG', params)
-	// If there's no slug then navigate back to porojects
+	// If there's no slug then navigate back to projects
 	return (
 		<div>
 			<GitHubStacklokProvider/>

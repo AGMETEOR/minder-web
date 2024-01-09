@@ -6,11 +6,13 @@ type GlobalState = {
     minderContext: MinderContext;
     currentProject: Project;
     currentUser: CurrentUser;
+    projects: Project[];
     projectRules: any[];
     projectProfiles: any[];
     remoteRepos: any[];
     localRepos: any[];
     setMinderContext: (projectID: string, access_token: string, provider: string) => void;
+    setProjects: (projects: Project[]) => void;
     setCurrentUser: (user: CurrentUser) => void;
     addToLocalRepos: (owner: string, repo_id: string, name: string) => void;
     addRuleToControlPlane: (ruleData: string) => void;
@@ -40,6 +42,7 @@ const initialMinderContext: MinderContext = {
 
 export const useStore = create<GlobalState>((set, get) => ({
     minderContext: {...initialMinderContext},
+    projects: [],
     currentProject: {...initialCurrentProject},
     currentUser: {...initialUser},
     projectRules: [],
@@ -51,6 +54,9 @@ export const useStore = create<GlobalState>((set, get) => ({
     },
     setCurrentUser: (user: CurrentUser) => {
         set({currentUser: user});
+    },
+    setProjects: (projects: Project[]) => {
+        set({projects})
     },
     addRuleToControlPlane: async (ruleData: string) => {
         const context = get().minderContext;

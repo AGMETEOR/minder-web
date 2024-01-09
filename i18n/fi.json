@@ -1,0 +1,76 @@
+{
+    "Login": {
+      "title": "Avointa lähdekoodia yhteisöille",
+      "proposition": "Turvaa ja hallitse ohjelmistoprojekteja",
+      "description": "Minder by Stacklok on avoimen lähdekoodin alusta, joka auttaa kehitystiimejä ja avoimen lähdekoodin yhteisöjä rakentamaan turvallisempaa ohjelmistoa ja osoittamaan muille, että heidän luomansa on turvallista.",
+      "signin": "Kirjaudu sisään Githubin avulla"
+    },
+    "LangSwitcher": {
+      "btn": "Valitse kieli",
+      "english": "Englanti",
+      "french": "Ranska",
+      "finnish": "Suomi"
+    },
+    "Projects": {
+      "title": "Minder-projektisi",
+      "create": "Luo projekti",
+      "goToDashboard": "Siirry projektin kojelautaan"
+    },
+    "Sidebar": {
+      "providers": "Tarjoajat",
+      "repos": "Repos",
+      "rules": "Säännöt",
+      "profiles": "Profiilit"
+    },
+    "Header": {
+      "signout": "Kirjaudu ulos"
+    },
+    "Providers": {
+      "title": "Salli Minderin hallita GitHubin repositorioitasi",
+      "enroll": "Rekisteröidy",
+      "enrolled": "Rekisteröity"
+    },
+    "Repos": {
+      "remoteRepos": "Etätarjoajien repositoriosi",
+      "localRepos": "Minder-repositoriosi",
+      "name": "Nimi",
+      "owner": "Omistaja",
+      "provider": "Tarjoaja",
+      "addMinder": "Lisää Minderiin",
+      "removeMinder": "Poista Minderistä",
+      "searchRemote": "Etsi etärepositorioita",
+      "search": "Etsi repositorioita"
+    },
+    "Rules": {
+      "title": "Sääntötyypit",
+      "name": "Nimi",
+      "provider": "Tarjoaja",
+      "view": "Näytä",
+      "search": "Etsi sääntöjä"
+    },
+    "Profiles": {
+      "title": "Profiilisi",
+      "name": "Nimi",
+      "provider": "Tarjoaja",
+      "view": "Näytä",
+      "search": "Etsi profiileja",
+      "alert": "Hälytys",
+      "remediate": "Korjaa"
+    },
+    "Table": {
+      "create": "Luo"
+    },
+    "Editor": {
+      "close": "Sulje",
+      "save": "Tallenna",
+      "saveclose": "Tallenna ja sulje",
+      "addRule": "Lisää sääntö",
+      "viewRules": "Näytä säännöt"
+    },
+    "Footer": {
+      "rights": "Kaikki oikeudet pidätetään.",
+      "status": "Tilasivu",
+      "terms": "Palveluehdot",
+      "docs": "Asiakirjat"
+    }
+  }

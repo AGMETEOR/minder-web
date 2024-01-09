@@ -1,6 +1,6 @@
 'use client'
 import { useStore } from '@/store';
-import { Info } from '@/types';
+import { Info, Project } from '@/types';
 import { Session } from 'next-auth';
 import { SessionProvider, useSession } from 'next-auth/react';
 import { redirect } from 'next/navigation';
@@ -14,6 +14,7 @@ function InitState() {
     const fetchData = useStore(((state) => state.fetchData));
     const setMinderContext = useStore(((state) => state.setMinderContext));
     const setCurrentUser = useStore(((state) => state.setCurrentUser));
+    const setProjects = useStore((state) => state.setProjects);
     const session = useSession({
         required: true,
         onUnauthenticated() {
@@ -26,12 +27,14 @@ function InitState() {
     let userEmail = '';
     let userId = 0;
     let userName = '';
+    let userProjects: Project[] = [];
 	if (sessionData) {
 		projectID = sessionData.registeredUser?.projects[0].projectId || '';
         accessToken = sessionData.access_token || '';
         userEmail = sessionData.user?.email || '';
         userName = sessionData.user?.name || '';
         userId = sessionData.registeredUser?.user.id || 0;
+        userProjects = sessionData.registeredUser?.projects || [];
 	}
 
     useEffect(() => {
@@ -46,6 +49,7 @@ function InitState() {
                 name: userName,
                 email: userEmail,
             })
+            setProjects(userProjects);
             loadData();
         }  
 	}, [session, projectID, accessToken]);

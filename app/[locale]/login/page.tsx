@@ -3,15 +3,16 @@ import React from 'react';
 import Image from 'next/image';
 import { signIn } from 'next-auth/react';
 import { providerID } from '@/oauthprovider';
-import {useTranslations} from 'next-intl';
+import {useLocale, useTranslations} from 'next-intl';
 import './login.css';
 import LangSwitcher from '@/components/locale-switcher';
 
 const Login = () => {
 	const t = useTranslations('Login');
+	const locale = useLocale();
 	const imgStr = 'https://stacklok-statamic-1.nyc3.digitaloceanspaces.com/minder-logo-no-bg-1699288002.svg';
 	const handleSignin = async () => {
-		await signIn(providerID, {callbackUrl: '/en/projects'})
+		await signIn(providerID, {callbackUrl: `/${locale}/projects`})
 	}
 	return (
 		<div className='flex justify-center items-center h-screen relative'>

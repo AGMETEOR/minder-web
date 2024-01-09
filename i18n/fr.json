@@ -4,5 +4,74 @@
       "proposition": "Sécuriser et gouverner les projets logiciels.",
       "description": "Minder par Stacklok est une plateforme open source qui aide les équipes de développement et les communautés open source à construire des logiciels plus sécurisés, et à démontrer aux autres que ce qu'ils ont construit est sécurisé.",
       "signin": "Se connecter avec Github"
-    }
+    },
+    "LangSwitcher": {
+        "btn": "Sélectionner la langue.",
+        "english": "Anglais",
+        "french": "Français",
+        "finnish": "Finlandais"
+    },
+    "Projects": {
+        "title": "Vos projets Minder.",
+        "create": "Créer un projet.",
+        "goToDashboard": "Aller au tableau de bord"
+      },
+    "Sidebar": {
+        "providers": "Fournisseurs",
+        "repos": "Dépôts",
+        "rules": "Règles",
+        "profiles": "Profils"
+      },
+    "Header": {
+        "signout": "Déconnexion"
+      },
+    "Providers": {
+        "title": "Autorisez Minder à gérer vos dépôts GitHub",
+        "enroll": "S'inscrire",
+        "enrolled": "Inscrit"
+      },
+    "Repos": {
+        "remoteRepos": "Vos dépôts distants du fournisseur",
+        "localRepos": "Vos dépôts Minder",
+        "name": "Nom",
+        "owner": "Propriétaire",
+        "provider": "Fournisseur",
+        "addMinder": "Ajouter à Minder",
+        "removeMinder": "Supprimer de Minder",
+        "searchRemote": "Rechercher les dépôts distants",
+        "search": "Rechercher les dépôts"
+      },
+    "Rules": {
+        "title": "Vos types de règles",
+        "create": "Créer",
+        "name": "Nom",
+        "provider": "Fournisseur",
+        "view": "Voir",
+        "search": "Rechercher des règles"
+      },
+    "Profiles": {
+        "title": "Vos profils",
+        "name": "Nom",
+        "provider": "Fournisseur",
+        "view": "Voir",
+        "search": "Rechercher des profils",
+        "alert": "Alerte",
+        "remediate": "Remédier"
+      },
+    "Table": {
+        "create": "Créer"
+      },
+    "Editor": {
+        "close": "Fermer",
+        "save": "Enregistrer",
+        "saveclose": "Enregistrer & Fermer",
+        "addRule": "Ajouter une règle.",
+        "viewRules": "Voir les règles."
+      },
+    "Footer": {
+        "rights": "Tous droits réservés.",
+        "status": "Page de statut",
+        "terms": "Conditions d'utilisation",
+        "docs": "Docs"
+      }
 }
