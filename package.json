@@ -14,10 +14,12 @@
     "@fortawesome/free-solid-svg-icons": "^6.5.1",
     "@fortawesome/react-fontawesome": "^0.2.0",
     "@monaco-editor/react": "^4.6.0",
+    "flag-icons": "^7.1.0",
     "grpc-web": "^1.5.0",
     "js-yaml": "^4.1.0",
     "next": "14.0.4",
     "next-auth": "^4.24.5",
+    "next-intl": "^3.4.1",
     "react": "^18",
     "react-dom": "^18",
     "zustand": "^4.4.7"

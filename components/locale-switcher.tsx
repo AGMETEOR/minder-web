@@ -1,0 +1,43 @@
+import { useState } from "react";
+import "/node_modules/flag-icons/css/flag-icons.min.css";
+import Link from "next/link";
+import { usePathname } from "next/navigation";
+
+
+// TODO(allan): Replace this hacky and non scalable way for setting the locale
+function replaceLanguageCode(url: string, newLanguageCode: string) {
+    const match = url.match(/^\/([a-zA-Z]{2})\/(.*)/);
+  
+    if (match) {
+      const [, currentLanguageCode, restOfPath] = match;
+      const updatedUrl = `/${newLanguageCode}/${restOfPath}`;
+      return updatedUrl;
+    }
+  
+    return `/${newLanguageCode}${url}`;
+  }
+
+export default function LangSwitcher(){
+    const [open, setOpen] = useState(false);
+    const pathname = usePathname();
+    return (
+        <div className="absolute right-3 top-3 w-44">
+            <button onClick={() => setOpen(!open)} data-dropdown-toggle="dropdown" className="text-white bg-blue-700 hover:bg-blue-800 focus:outline-none font-medium rounded-lg text-sm px-5 py-2.5 text-center inline-flex items-center w-[inherit]" type="button">Select language 
+            <svg className="w-2.5 h-2.5 ms-3" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 10 6">
+                <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="m1 1 4 4 4-4"/>
+                </svg>
+            </button>
+
+            <div id="dropdown" className={`mt-2 z-10 ${open ? 'visible' : 'hidden'} bg-white divide-y divide-gray-100 rounded-lg shadow dark:bg-gray-700 w-[inherit]`}>
+                <ul className="py-2 text-sm text-gray-700 dark:text-gray-200" aria-labelledby="dropdownDefaultButton">
+                <li>
+                    <Link href={replaceLanguageCode(pathname, 'en')} locale='en' className="block px-4 py-2 hover:bg-gray-100 dark:hover:bg-gray-600 dark:hover:text-white"><span className="fi fi-gb"></span> English</Link>
+                </li>
+                <li>
+                    <Link href={replaceLanguageCode(pathname, 'fr')} locale='fr' className="block px-4 py-2 hover:bg-gray-100 dark:hover:bg-gray-600 dark:hover:text-white"><span className="fi fi-fr"></span> French</Link>
+                </li>
+                </ul>
+            </div>
+        </div>
+    )
+}
