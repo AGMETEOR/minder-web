@@ -8,6 +8,10 @@ const config: Config = {
   ],
   theme: {
     extend: {
+	colors: {
+		'stacklok-minder-blue': '#565AEF',
+		'light-white': 'rgba(255,255,255,0.17)',
+	},
       backgroundImage: {
         'gradient-radial': 'radial-gradient(var(--tw-gradient-stops))',
         'gradient-conic':

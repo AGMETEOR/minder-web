@@ -1,3 +1,7 @@
 {
-  "extends": "next/core-web-vitals"
+  "extends": ["next/core-web-vitals", "eslint:recommended"],
+  "rules": {
+    "quotes": ["error", "single"],
+    "no-mixed-spaces-and-tabs": 0
+  }
 }
