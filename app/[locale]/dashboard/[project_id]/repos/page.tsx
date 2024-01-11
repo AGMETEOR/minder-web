@@ -1,6 +1,7 @@
 'use client'
 import Table from '@/components/table';
 import { useStore } from '@/store';
+import { faPlus, faTrash } from '@fortawesome/free-solid-svg-icons';
 import { faEdit } from '@fortawesome/free-solid-svg-icons/faEdit';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { useTranslations } from 'next-intl';
@@ -24,7 +25,7 @@ export default function Repos(){
 				actions: [
 					{
 						action: t('addMinder'),
-						icon: <FontAwesomeIcon icon={faEdit}/>,
+						icon: <FontAwesomeIcon icon={faPlus}/>,
 						actionFunc: () => {
 							addRepoToControlPlane(data.owner, data.repoId, data.name)
 						}
@@ -51,7 +52,7 @@ export default function Repos(){
 				actions: [
 					{
 						action: t('removeMinder'),
-						icon: <FontAwesomeIcon icon={faEdit}/>,
+						icon: <FontAwesomeIcon icon={faTrash}/>,
 						actionFunc: () => {
 							addRepoToControlPlane(data.owner, data.repoId, data.name)
 						}

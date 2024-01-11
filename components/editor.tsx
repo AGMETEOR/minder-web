@@ -4,7 +4,7 @@ import { editor } from 'monaco-editor';
 import { useEffect, useRef, useState } from 'react';
 import Modal from './modal';
 import { Options } from './table';
-import { faEdit } from '@fortawesome/free-solid-svg-icons';
+import { faEdit, faPlus } from '@fortawesome/free-solid-svg-icons';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { parseYaml } from '@/utils/general';
 import yaml from 'js-yaml';
@@ -18,7 +18,13 @@ export enum Mode {
   E = 'Edit'
 }
 
+export enum Resource {
+  P = 'Profiles',
+  R = 'Rules'
+}
+
 type Props = {
+    resource: Resource;
     defaultVal: any;
     mode: Mode;
     saveFunc: (val: any) => Promise<void>
@@ -49,7 +55,7 @@ const RulesList = (props: RulesListType) => {
           <Options actions={[
           {
             action: t('addRule'),
-            icon: <FontAwesomeIcon icon={faEdit}/>,
+            icon: <FontAwesomeIcon icon={faPlus}/>,
             actionFunc: () => {
               const profile: any = parseYaml(props.editorVal);
               if (profile) {
@@ -96,10 +102,10 @@ export default function Editor(props: Props) {
   }, [props.defaultVal])
 
   useEffect(() => {
-    if (monaco && editorRef.current) {
+    if (monaco && editorRef.current && (props.resource === Resource.P)) {
       addRulesAction(editorRef.current as editor.IStandaloneCodeEditor , monaco);
     }
-  }, [editorRef, monaco]);
+  }, [editorRef, monaco, props.resource]);
 
   const save = async () => {
     await props.saveFunc(val);
@@ -156,9 +162,9 @@ export default function Editor(props: Props) {
   return (
     <div className='relative mt-10'>
       <div className="flex justify-end gap-2 bg-[#EBE0FF] p-2">
-        <button onClick={() => props.closeFunc()}>{t('close')}</button>
-        <button onClick={() => save()} className={`${disabeSaveBtn ? 'bg-gray-300 cursor-not-allowed opacity-50' : 'bg-blue-500'} hover:bg-blue-700 text-white py-1 px-2`} disabled={disabeSaveBtn}>{t('save')}</button>
-        <button onClick={() => saveClose()} className={`${disabeSaveBtn ? 'bg-gray-300 cursor-not-allowed opacity-50' : 'bg-blue-500'} hover:bg-blue-700 text-white py-1 px-2`}>{t('saveclose')}</button>
+        <button className='my-btn-no-background' onClick={() => props.closeFunc()}>{t('close')}</button>
+        <button onClick={() => save()} className={`my-btn-small text-white ${disabeSaveBtn ? 'bg-gray-300 cursor-not-allowed opacity-50' : 'bg-stacklok-minder-blue'}`} disabled={disabeSaveBtn}>{t('save')}</button>
+        <button onClick={() => saveClose()} className={`my-btn-small text-white ${disabeSaveBtn ? 'bg-gray-300 cursor-not-allowed opacity-50' : 'bg-stacklok-minder-blue'}`}>{t('saveclose')}</button>
       </div>
       <Modal
       title={tRules('viewYourRules')}

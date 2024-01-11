@@ -22,8 +22,7 @@ const Header = () => {
 			items-center 
 			border-b 
 			py-4 
-			px-[20px] 
-			xl:px-[112px]'>
+			px-6'>
 			<div className='flex items-center'>
 				<a className='me-3 min-w-[156px] min-h-[42px]'>
 					<Image 
@@ -43,7 +42,7 @@ const Header = () => {
 				<div className='inline-flex cursor-pointer'>
 					<div onClick={() => setOpenMenu(!openMenu)}  className="w-[40px] 
 						h-[40px] 
-						flex 
+						flex select-none
 						justify-center 
 		 				items-center 
 						bg-gray-100 
@@ -52,7 +51,7 @@ const Header = () => {
 						border-blue-100 
 						text-cyan-950 
 						text-sm 
-						font-medium">AG</div>
+						font-medium">{initials}</div>
 					<div className={`absolute
 						right-0 
 						top-[45px] 

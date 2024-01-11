@@ -1,7 +1,7 @@
 'use client'
 import React, { useState } from 'react';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import {faCodeCompare} from '@fortawesome/free-solid-svg-icons';
+import {faCodeCompare, faHandHoldingHand} from '@fortawesome/free-solid-svg-icons';
 import { useSession } from 'next-auth/react';
 import { Session } from 'next-auth';
 import { Info, StacklokProviders } from '@/types';
@@ -85,14 +85,14 @@ const GitHubStacklokProvider = () => {
 		
 	}
 	return (
-		<div className="rounded-xl border-2 border-gray-blue-100 overflow-hidden">
+		<div className="border-2 border-gray-blue-100 overflow-hidden">
 			<div className="flex justify-between bg-gray-50 border-b border-gray-blue-100 py-3.5 px-6">
 				<div className="me-3 text-gray-900 font-medium">Github</div>
-				<FontAwesomeIcon icon={faCodeCompare}/>
+				<FontAwesomeIcon icon={faHandHoldingHand}/>
 			</div>
 			<div className="py-3.5 px-6">
 				<div className="mb-3 text-gray-900 font-normal">{t('title')}</div>
-				<button onClick={() => enrollFunc()} className="h-[44px] flex items-center text-sm font-medium text-gray-900 leading-5 rounded-lg border transition-all ease-in-out duration-300 px-2.5 py-1 bg-gray-50 border-gray-200 hover:bg-gray-200 link">
+				<button onClick={() => enrollFunc()} className="my-btn-small bg-black text-white">
 					{verified && verificationComplete ? t('enrolled') : t('enroll')}
 					</button>
 			</div>

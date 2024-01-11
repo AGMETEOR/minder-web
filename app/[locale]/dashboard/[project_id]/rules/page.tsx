@@ -1,6 +1,6 @@
 'use client'
-import Editor, { Mode } from '@/components/editor';
-import { faEdit } from '@fortawesome/free-solid-svg-icons';
+import Editor, { Mode, Resource } from '@/components/editor';
+import { faEdit, faEye } from '@fortawesome/free-solid-svg-icons';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { useState } from 'react';
 import yaml from 'js-yaml';
@@ -30,7 +30,7 @@ export default function Rules(){
 				actions: [
 					{
 						action: t('view'),
-						icon: <FontAwesomeIcon icon={faEdit}/>,
+						icon: <FontAwesomeIcon icon={faEye}/>,
 						actionFunc: () => {
 							const orderedRuleDef = {
 								version: 'v1',
@@ -77,6 +77,7 @@ export default function Rules(){
 				{
 					showEditor && (
 						<Editor
+						resource={Resource.R}
 						mode={editorMode} 
 						defaultVal={defaultVal}
 						saveFunc={saveRuleTypeToControlPlane}

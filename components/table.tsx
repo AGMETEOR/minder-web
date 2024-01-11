@@ -47,16 +47,16 @@ export const Options = (props: Opts) => {
 const Table = (props: TableProps) => {
     const t = useTranslations("Table");
     return (
-        <div className="flex flex-col">
+        <div className="flex flex-col mt-2">
         <div className="-my-2 sm:-mx-6 lg:-mx-8">
           <div className="py-2 align-middle inline-block min-w-full sm:px-6 lg:px-8">
-            <div className="shadow border-b border-gray-200 sm:rounded-lg">
-                <div className="p-6 flex justify-between items-center">
+            <div className="shadow border-b border-gray-200 rounded-t-lg">
+                <div className="p-6 flex justify-between items-center bg-stacklok-minder-blue/5 rounded-t-lg">
                     <div className="flex gap-2 items-center">
-                      <h5>{props.tableTitle}</h5>
+                      <h5 className='font-fig font-bold'>{props.tableTitle}</h5>
                       {
                         props.createFunc && (
-                            <button onClick={() => props.createFunc()} className="bg-pink-500 text-white active:bg-pink-600 font-bold text-xs px-4 py-2 rounded shadow hover:shadow-md outline-none focus:outline-none mr-1 mb-1 ease-linear transition-all duration-150" type="button">
+                            <button onClick={() => props.createFunc()} className="my-btn-small bg-black text-white active:bg-black/70" type="button">
                             {t('create')} <FontAwesomeIcon icon={faPlus} />
                             </button>
                         )
@@ -70,7 +70,7 @@ const Table = (props: TableProps) => {
                 <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="m19 19-4-4m0-7A7 7 0 1 1 1 8a7 7 0 0 1 14 0Z"/>
             </svg>
         </div>
-        <input type="search" id="default-search" className="block w-full p-4 ps-10 text-sm text-gray-900 border border-gray-300 rounded-lg bg-gray-50 focus:ring-blue-500 focus:border-blue-500" placeholder={props.searchPlaceholder} required/>
+        <input type="search" className="font-fig block w-full p-4 ps-10 text-sm text-gray-900 border border-gray-300 rounded-lg bg-gray-50 focus:outline-none" placeholder={props.searchPlaceholder} required/>
     </div>
 </form>
                 </div>

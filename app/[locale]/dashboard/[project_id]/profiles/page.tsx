@@ -1,6 +1,6 @@
 'use client'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import Editor, { Mode } from '@/components/editor';
+import Editor, { Mode, Resource } from '@/components/editor';
 import { useState, useEffect } from 'react';
 import yaml from 'js-yaml';
 import Table from '@/components/table';
@@ -77,6 +77,7 @@ export default function Profiles(){
 				{
 					showEditor && (
 						<Editor
+						resource={Resource.P}
 						mode={editorMode} 
 						defaultVal={defaultVal}
 						saveFunc={saveProfileToControlPlane}
