@@ -4,7 +4,7 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import {faCodeCompare} from '@fortawesome/free-solid-svg-icons';
 import { useSession } from 'next-auth/react';
 import { Session } from 'next-auth';
-import { Info } from '@/types';
+import { Info, StacklokProviders } from '@/types';
 import { redirect } from 'next/navigation';
 import { useTranslations } from 'next-intl';
 
@@ -98,11 +98,15 @@ const GitHubStacklokProvider = () => {
 			</div>
 		</div>)
 }
-export default function Providers({ params }: { params: { slug: string } }){
-	// TODO(allan): If there's no slug then navigate back to projects
-	return (
-		<div>
-			<GitHubStacklokProvider/>
-		</div>
-	)
+
+type Props = {
+    provider: StacklokProviders;
+}
+export default function ControlPlaneProviders(props: Props){
+    switch (props.provider) {
+        case StacklokProviders.GH:
+            return <GitHubStacklokProvider/>
+        default:
+            return <GitHubStacklokProvider/>
+    }
 }

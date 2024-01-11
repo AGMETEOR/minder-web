@@ -46,7 +46,8 @@
       "name": "Name",
       "provider": "Provider",
       "view": "View",
-      "search": "Search rules"
+      "search": "Search rules",
+      "viewYourRules": "View your rules"
     },
     "Profiles": {
       "title": "Your profiles",

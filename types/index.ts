@@ -45,8 +45,13 @@ export type Info = {
 	registeredUser?: RegisteredUser;
 }
 
+export enum StacklokProviders {
+    GH =  "github",
+    GL = "gitlab"
+}
+
 export type MinderContext = {
-    provider: string;
+    provider: StacklokProviders;
     projectId: string;
 	accessToken: string;
 }

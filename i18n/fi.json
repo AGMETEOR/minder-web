@@ -46,7 +46,8 @@
       "name": "Nimi",
       "provider": "Tarjoaja",
       "view": "Näytä",
-      "search": "Etsi sääntöjä"
+      "search": "Etsi sääntöjä",
+      "viewYourRules": "Näytä sääntösi"
     },
     "Profiles": {
       "title": "Profiilisi",

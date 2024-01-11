@@ -1,6 +1,6 @@
 'use client'
 import { useStore } from '@/store';
-import { Info, Project } from '@/types';
+import { Info, Project, StacklokProviders } from '@/types';
 import { Session } from 'next-auth';
 import { SessionProvider, useSession } from 'next-auth/react';
 import { redirect } from 'next/navigation';
@@ -43,7 +43,7 @@ function InitState() {
                 await fetchData(projectID, accessToken);
             }
             
-            setMinderContext(projectID, accessToken, "github");
+            setMinderContext(projectID, accessToken, StacklokProviders.GH);
             setCurrentUser({
                 id: userId,
                 name: userName,
@@ -52,7 +52,7 @@ function InitState() {
             setProjects(userProjects);
             loadData();
         }  
-	}, [session, projectID, accessToken]);
+	}, [session, projectID, accessToken, StacklokProviders.GH]);
 
     return null;
 }

@@ -16,7 +16,7 @@ const ProjectCard = (props: ProjectProps) => {
     return (
         <div className="flex flex-col justify-between min-w-[280px] p-6 bg-white border border-gray-200 rounded-lg shadow h-52">
             <h5 className="mb-2 text-2xl font-bold tracking-tight text-gray-900 font-fig">{props.name}</h5>
-            <Link href={`/dashboard/${props.id}/providers`} className="my-btn bg-stacklok-minder-blue text-white">
+            <Link href={`/dashboard/${props.id}/repos`} className="my-btn bg-stacklok-minder-blue text-white">
                 {t('goToDashboard')}
                 <svg className="rtl:rotate-180 w-3.5 h-3.5 ms-2" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 14 10">
                     <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M1 5h12m0 0L9 1m4 4L9 9"/>

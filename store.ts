@@ -1,5 +1,5 @@
 import { create } from 'zustand';
-import { CurrentUser, MinderContext, Project, User } from './types';
+import { CurrentUser, MinderContext, Project, StacklokProviders, User } from './types';
 import { parseYaml } from './utils/general';
 
 type GlobalState = {
@@ -13,7 +13,7 @@ type GlobalState = {
     localRepos: any[];
     errorBannerMessage?: string;
     setErrorBannerMessage: (msg: string) => void;
-    setMinderContext: (projectID: string, access_token: string, provider: string) => void;
+    setMinderContext: (projectID: string, access_token: string, provider: StacklokProviders) => void;
     setProjects: (projects: Project[]) => void;
     setCurrentUser: (user: CurrentUser) => void;
     addToLocalRepos: (owner: string, repo_id: string, name: string) => void;
@@ -37,7 +37,7 @@ const initialUser: CurrentUser = {
 }
 
 const initialMinderContext: MinderContext = {
-    provider: 'github',
+    provider: StacklokProviders.GH,
     projectId: '',
     accessToken: '',
 }
@@ -54,7 +54,7 @@ export const useStore = create<GlobalState>((set, get) => ({
     setErrorBannerMessage: (msg: string) => {
         set({errorBannerMessage: msg});
     },
-    setMinderContext: (projectId: string, accessToken: string, provider: string) => {
+    setMinderContext: (projectId: string, accessToken: string, provider: StacklokProviders) => {
         set({minderContext: {projectId, provider, accessToken}});
     },
     setCurrentUser: (user: CurrentUser) => {

@@ -84,7 +84,8 @@ const RulesList = (props: RulesListType) => {
 }
 
 export default function Editor(props: Props) {
-  const t = useTranslations("Editor")
+  const t = useTranslations("Editor");
+  const tRules = useTranslations("Rules")
   const [val, setVal] = useState(props.defaultVal);
   const editorRef = useRef<editor.IStandaloneCodeEditor | null>(null);
   const [monaco, setMonaco] = useState<Monaco>();
@@ -160,7 +161,7 @@ export default function Editor(props: Props) {
         <button onClick={() => saveClose()} className={`${disabeSaveBtn ? 'bg-gray-300 cursor-not-allowed opacity-50' : 'bg-blue-500'} hover:bg-blue-700 text-white py-1 px-2`}>{t('saveclose')}</button>
       </div>
       <Modal
-      title="View your rules"
+      title={tRules('viewYourRules')}
       open={openModal} 
       onClose={() => setOpenModal(!openModal)}
       primaryFunc={() => {}}

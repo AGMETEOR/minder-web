@@ -7,8 +7,8 @@ type ModalProps = {
     open: boolean;
     onClose: () => void;
     children: React.ReactElement;
-    primaryFunc: () => void;
-    secondaryFunc: () => void;
+    primaryFunc?: () => void;
+    secondaryFunc?: () => void;
 }
 
 const Modal = (props: ModalProps) => {
@@ -25,7 +25,7 @@ const Modal = (props: ModalProps) => {
         <div onClick={onClose} className={`fixed inset-0 flex justify-center items-center transition-colors z-50 h-full max-h-full ${open ? 'visible bg-black/20' : 'invisible'}`}>
             <div onClick={(e) => e.stopPropagation()} className={`bg-white rounded-xl shadow p-6 transition-all w-auto ${open ? 'scale-100 opacity-100' : 'scale-125 opacity-0'}`}>
             <div className='flex justify-between items-center py-4 px-3 sticky top-0'>
-                <h2>{title}</h2>
+                <h2 className='uppercase font-bold'>{title}</h2>
             <div onClick={onClose} className='rounded-lg text-gray-400 bg-white hover:bg-gray-50 hover:text-gray-600 cursor-pointer'>
                 <FontAwesomeIcon icon={faXmark} />
             </div>
@@ -34,8 +34,8 @@ const Modal = (props: ModalProps) => {
             {children}
             </div>
             <div className='flex justify-end py-4 mt-6'>
-                <button onClick={secondaryFunc} className="bg-red-500 text-white active:bg-pink-600 font-bold text-xs px-4 py-2 rounded shadow hover:shadow-md outline-none focus:outline-none mr-1 mb-1 ease-linear transition-all duration-150" type="button">Cancel</button>
-                <button onClick={primaryFunc} className="bg-pink-500 text-white active:bg-pink-600 font-bold text-xs px-4 py-2 rounded shadow hover:shadow-md outline-none focus:outline-none mr-1 mb-1 ease-linear transition-all duration-150" type="button">Action</button>
+                {secondaryFunc && <button onClick={secondaryFunc} className="bg-red-500 text-white active:bg-pink-600 font-bold text-xs px-4 py-2 rounded shadow hover:shadow-md outline-none focus:outline-none mr-1 mb-1 ease-linear transition-all duration-150" type="button">Cancel</button>}
+                {primaryFunc && <button onClick={primaryFunc} className="bg-pink-500 text-white active:bg-pink-600 font-bold text-xs px-4 py-2 rounded shadow hover:shadow-md outline-none focus:outline-none mr-1 mb-1 ease-linear transition-all duration-150" type="button">Action</button>}
             </div>
             </div>
         </div>

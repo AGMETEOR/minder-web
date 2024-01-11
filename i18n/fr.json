@@ -47,7 +47,8 @@
         "name": "Nom",
         "provider": "Fournisseur",
         "view": "Voir",
-        "search": "Rechercher des règles"
+        "search": "Rechercher des règles",
+        "viewYourRules": "Voir vos règles"
       },
     "Profiles": {
         "title": "Vos profils",
