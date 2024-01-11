@@ -68,9 +68,12 @@
       "viewRules": "Näytä säännöt"
     },
     "Footer": {
-      "rights": "Kaikki oikeudet pidätetään.",
+      "rights": "Kaikki oikeudet pidätetään",
       "status": "Tilasivu",
       "terms": "Palveluehdot",
       "docs": "Asiakirjat"
-    }
+    },
+    "Errors": {
+        "loginfailed": "Kirjautuminen epäonnistui"
+      }
   }

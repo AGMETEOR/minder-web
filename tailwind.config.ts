@@ -1,5 +1,7 @@
 import type { Config } from 'tailwindcss'
 
+const defaultTheme = require('tailwindcss/defaultTheme')
+
 const config: Config = {
   content: [
     './pages/**/*.{js,ts,jsx,tsx,mdx}',
@@ -8,6 +10,9 @@ const config: Config = {
   ],
   theme: {
     extend: {
+      fontFamily: {
+        'fig': ['"Figtree"', ...defaultTheme.fontFamily.sans],
+      },
 	colors: {
 		'stacklok-minder-blue': '#565AEF',
 		'light-white': 'rgba(255,255,255,0.17)',

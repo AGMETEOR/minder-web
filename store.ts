@@ -11,6 +11,8 @@ type GlobalState = {
     projectProfiles: any[];
     remoteRepos: any[];
     localRepos: any[];
+    errorBannerMessage?: string;
+    setErrorBannerMessage: (msg: string) => void;
     setMinderContext: (projectID: string, access_token: string, provider: string) => void;
     setProjects: (projects: Project[]) => void;
     setCurrentUser: (user: CurrentUser) => void;
@@ -49,6 +51,9 @@ export const useStore = create<GlobalState>((set, get) => ({
     projectProfiles: [],
     remoteRepos: [],
     localRepos:[],
+    setErrorBannerMessage: (msg: string) => {
+        set({errorBannerMessage: msg});
+    },
     setMinderContext: (projectId: string, accessToken: string, provider: string) => {
         set({minderContext: {projectId, provider, accessToken}});
     },

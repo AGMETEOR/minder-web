@@ -12,8 +12,8 @@
         "finnish": "Finlandais"
     },
     "Projects": {
-        "title": "Vos projets Minder.",
-        "create": "Créer un projet.",
+        "title": "Vos projets Minder",
+        "create": "Créer un projet",
         "goToDashboard": "Aller au tableau de bord"
       },
     "Sidebar": {
@@ -69,9 +69,12 @@
         "viewRules": "Voir les règles."
       },
     "Footer": {
-        "rights": "Tous droits réservés.",
+        "rights": "Tous droits réservés",
         "status": "Page de statut",
         "terms": "Conditions d'utilisation",
         "docs": "Docs"
+      },
+    "Errors": {
+        "loginfailed": "Échec de la connexion"
       }
 }

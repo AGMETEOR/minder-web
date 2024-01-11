@@ -23,7 +23,7 @@ export default function RootLayout({
 }) {
   const messages = useMessages();
   return (
-    <html lang={locale} className='scroll-smooth antialiased'>
+    <html lang={locale} className='font-fig scroll-smooth antialiased'>
       <body className={inter.className}>
       <NextIntlClientProvider messages={messages}>
         {children}

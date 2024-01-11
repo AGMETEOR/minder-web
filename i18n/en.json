@@ -68,9 +68,12 @@
       "viewRules": "View rules"
     },
     "Footer": {
-      "rights": "All Rights Reserved.",
+      "rights": "All Rights Reserved",
       "status": "Status page",
       "terms": "Terms of service",
       "docs": "Docs"
+    },
+    "Errors": {
+      "loginfailed": "Failed to login"
     }
 }

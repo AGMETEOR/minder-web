@@ -5,6 +5,7 @@ import {faHandHoldingHand, faArrowLeft, faBucket, faIdCard, faRuler} from '@fort
 import Link from 'next/link';
 import { usePathname } from 'next/navigation';
 import { useLocale, useTranslations } from 'next-intl';
+import ProjectSwitcher from './project-switcher';
 
 type Props = {
 	project_id: string;
@@ -29,7 +30,6 @@ const Sidebar = (props: Props) => {
 				</button>
 
 				<ul className="p-6">
-
 					<li className={`flex items-center gap-x-4 cursor-pointer my-2 p-2 text-gray-300 text-sm hover:bg-light-white rounded-md ${pathname === "/" + locale + providersHref && 'bg-light-white'}`}><FontAwesomeIcon icon={faHandHoldingHand}/><span className={`origin-left duration-200 ${!sidebarExpanded && 'hidden'}`}><Link href={providersHref}>{t('providers')}</Link></span></li>
 					<li className={`flex items-center gap-x-4 cursor-pointer my-2 p-2 text-gray-300 text-sm hover:bg-light-white rounded-md ${pathname === "/" + locale + reposHref && 'bg-light-white'}`}><FontAwesomeIcon icon={faBucket}/><span className={`origin-left duration-200 ${!sidebarExpanded && 'hidden'}`}><Link href={reposHref}>{t('repos')}</Link></span></li>
 					<li className={`flex items-center gap-x-4 cursor-pointer my-2 p-2 text-gray-300 text-sm hover:bg-light-white rounded-md ${pathname === "/" + locale + rulesHref && 'bg-light-white'}`}><FontAwesomeIcon icon={faRuler}/><span className={`origin-left duration-200 ${!sidebarExpanded && 'hidden'}`}><Link href={rulesHref}>{t('rules')}</Link></span></li>

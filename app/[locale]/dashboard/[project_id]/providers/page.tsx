@@ -99,8 +99,7 @@ const GitHubStacklokProvider = () => {
 		</div>)
 }
 export default function Providers({ params }: { params: { slug: string } }){
-	console.log('THE SLUG', params)
-	// If there's no slug then navigate back to projects
+	// TODO(allan): If there's no slug then navigate back to projects
 	return (
 		<div>
 			<GitHubStacklokProvider/>

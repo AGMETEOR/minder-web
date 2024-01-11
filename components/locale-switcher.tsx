@@ -24,14 +24,14 @@ export default function LangSwitcher(){
     const t = useTranslations('LangSwitcher');
     return (
         <div className="absolute right-3 top-3 min-w-[176px] w-auto">
-            <button onClick={() => setOpen(!open)} data-dropdown-toggle="dropdown" className="text-white bg-blue-700 hover:bg-blue-800 focus:outline-none font-medium rounded-lg text-sm px-5 py-2.5 text-center inline-flex items-center w-[inherit]" type="button">
+            <button onClick={() => setOpen(!open)} data-dropdown-toggle="dropdown" className="my-btn-no-background text-gray-900" type="button">
                 {t('btn')} 
             <svg className="w-2.5 h-2.5 ms-3" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 10 6">
                 <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="m1 1 4 4 4-4"/>
                 </svg>
             </button>
 
-            <div id="dropdown" className={`mt-2 z-10 ${open ? 'visible' : 'hidden'} bg-white divide-y divide-gray-100 rounded-lg shadow dark:bg-gray-700 w-[inherit]`}>
+            <div id="dropdown" className={`mt-2 z-10 ${open ? 'visible' : 'hidden'} divide-y divide-gray-100 rounded-lg shadow bg-gray-700 w-[inherit]`}>
                 <ul className="py-2 text-sm text-gray-700 dark:text-gray-200" aria-labelledby="dropdownDefaultButton">
                 <li>
                     <Link href={replaceLanguageCode(pathname, 'en')} locale='en' className="block px-4 py-2 hover:bg-gray-100 dark:hover:bg-gray-600 dark:hover:text-white"><span className="fi fi-gb"></span> {t('english')}</Link>
