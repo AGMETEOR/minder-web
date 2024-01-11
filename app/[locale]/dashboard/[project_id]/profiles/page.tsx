@@ -1,7 +1,7 @@
 'use client'
+import { useState } from 'react';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import Editor, { Mode, Resource } from '@/components/editor';
-import { useState, useEffect } from 'react';
 import yaml from 'js-yaml';
 import Table from '@/components/table';
 import { faEdit } from '@fortawesome/free-solid-svg-icons/faEdit';
