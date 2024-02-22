@@ -12,10 +12,12 @@ async function handler(req: NextRequest) {
     }
 
     const base = `${baseAPiURL}/api/v1/repositories/provider/github/remote?`;
-    const urlWithParams = base + new URLSearchParams({
-		provider: 'github',
-		project_id: `${projectId}`,
-	}).toString();
+    const urlWithParams =
+        base +
+        new URLSearchParams({
+            'context.provider': 'github', // TODO: This will come from context or some sort of state
+            'context.project_id': projectId,
+        }).toString();
   
     const data = await makeGetRequest(req, urlWithParams);
     return new Response(JSON.stringify(data));
