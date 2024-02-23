@@ -1,10 +1,42 @@
 ## THE MINDER CONTROL PLANE WEB CLIENT
-See details about Minder by Stacklok here: https://docs.stacklok.com/minder/
-Set up your local server to test the client by following this link: https://github.com/stacklok/minder?tab=readme-ov-file#development
 
-![alt text](https://private-user-images.githubusercontent.com/28563179/295913630-73b9cafd-5d0b-40e3-bb92-4569196742b4.png?jwt=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJnaXRodWIuY29tIiwiYXVkIjoicmF3LmdpdGh1YnVzZXJjb250ZW50LmNvbSIsImtleSI6ImtleTUiLCJleHAiOjE3MDQ5NzY3MjEsIm5iZiI6MTcwNDk3NjQyMSwicGF0aCI6Ii8yODU2MzE3OS8yOTU5MTM2MzAtNzNiOWNhZmQtNWQwYi00MGUzLWJiOTItNDU2OTE5Njc0MmI0LnBuZz9YLUFtei1BbGdvcml0aG09QVdTNC1ITUFDLVNIQTI1NiZYLUFtei1DcmVkZW50aWFsPUFLSUFWQ09EWUxTQTUzUFFLNFpBJTJGMjAyNDAxMTElMkZ1cy1lYXN0LTElMkZzMyUyRmF3czRfcmVxdWVzdCZYLUFtei1EYXRlPTIwMjQwMTExVDEyMzM0MVomWC1BbXotRXhwaXJlcz0zMDAmWC1BbXotU2lnbmF0dXJlPWMxYjM0OWJlMzcwNzU0NjIxYTExMTJhYjczNjQ2YzA3NWM3MGQ2NTQwY2U0OWNiZGRhYjc4MjczMjMyZDAzMjgmWC1BbXotU2lnbmVkSGVhZGVycz1ob3N0JmFjdG9yX2lkPTAma2V5X2lkPTAmcmVwb19pZD0wIn0.2G1v8hQhfocgqHZV49vgmCubn9DS1KbPNKfWHblw5G0)
+Minder by [Stacklok](https://stacklok.com/) is an open source platform that helps development teams and open source communities build more
+secure software, and prove to others that what they’ve built is secure. Minder helps project owners proactively manage
+their security posture by providing a set of checks and policies to minimize risk along the software supply chain,
+and attest their security practices to downstream consumers.
+Learn more about Minder CLI [here](https://docs.stacklok.com/minder/)
 
-# Run project
+This <b>Minder Control Plane Web Client</b> is an open source platform to help development teams performs all their Minder tasks via a Web Client. 
+
+# Development
+
+This section describes how to build and run Minder web client locally.
+
+
+## Set Up your local Server
+
+Set up your local server to test the client by following this [guide](https://minder-docs.stacklok.dev/developer_guide/get-hacking)
+
+Before Running the server application, run this command 
+```bash
+bin/minder-server migrate up
+```
+
+Then run your local server 
+```bash
+bin/minder-server serve
+```
+
+## Set Up The Minder Web Client
+#### Clone The Repository
+```bash
+git clone git@github.com:AGMETEOR/minder-web.git
+```
+#### Install dependencies
+```bash
+npm install
+```
+#### Run The Project
 ```
 npm run dev
 ```
