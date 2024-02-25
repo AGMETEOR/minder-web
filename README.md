@@ -36,6 +36,12 @@ git clone git@github.com:AGMETEOR/minder-web.git
 ```bash
 npm install
 ```
+#### Set Environment Variables
+Create a .env.local file at the root of your project and add the following environment variables:
+```
+NEXTAUTH_URL=http://localhost:3001
+NEXTAUTH_SECRET="abc"
+```
 #### Run The Project
 ```
 npm run dev
