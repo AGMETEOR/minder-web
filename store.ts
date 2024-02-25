@@ -128,14 +128,16 @@ export const useStore = create<GlobalState>((set, get) => ({
     addToLocalRepos: async (owner: string, repo_id: string, name: string) => {
         const context = get().minderContext;
         const body = JSON.stringify({
-			project_id: context.projectId,
-			provider: context.provider,
-			repository: {
-					owner,
-					repo_id,
-					name,
-			}
-		})
+            context: {
+                provider: context.provider,
+                project: context.projectId,
+            },
+            repository: {
+                owner,
+                repo_id,
+                name,
+            },
+        });
 		const response = await fetch('/api/repos/register', {
 			method: 'POST',
 			headers: new Headers({
